@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad — Mind Void</title>
+<meta name="description" content="Qué datos recoge Mind Void, para qué, y qué no sale nunca de tu teléfono.">
+<style>
+  :root {
+    --void: #08090B;
+    --surface: #101216;
+    --stroke: #1E2128;
+    --text1: #F2F4F7;
+    --text2: #A8AEB9;
+    --text3: #6B7280;
+    --mint: #35D07F;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 96px;
+    background: var(--void);
+    color: var(--text2);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  header { padding: 72px 0 8px; }
+  h1 {
+    color: var(--text1);
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+  }
+  h2 {
+    color: var(--text1);
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+    margin: 56px 0 12px;
+  }
+  h3 { color: var(--text1); font-size: 1rem; margin: 32px 0 8px; }
+  .updated { color: var(--text3); font-size: 0.875rem; margin: 0; }
+  .lead {
+    color: var(--text1);
+    font-size: 1.0625rem;
+    background: var(--surface);
+    border: 1px solid var(--stroke);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 32px 0 0;
+  }
+  strong { color: var(--text1); font-weight: 600; }
+  a { color: var(--mint); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.25rem; }
+  li { margin: 6px 0; }
+  .table-wrap { overflow-x: auto; margin: 16px 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: 0.9375rem; }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--stroke); vertical-align: top; }
+  th { color: var(--text1); font-weight: 600; white-space: nowrap; }
+  footer {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--stroke);
+    color: var(--text3);
+    font-size: 0.875rem;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Política de privacidad</h1>
+  <p class="updated">Mind Void · Última actualización: 31 de julio de 2026</p>
+</header>
+
+<p class="lead">
+  Mind Void mide cómo usas el teléfono, pero <strong>esa medición no sale de él</strong>.
+  Ni qué aplicaciones abres, ni cuánto tiempo, ni qué bloqueaste, ni tu PIN. Al
+  servidor sólo viajan dos cosas: <strong>el correo de tu cuenta</strong> y
+  <strong>un número del 1 al 9 por día</strong>, el que eliges al responder cómo te
+  ha ido. Nada más. No hay publicidad, ni analítica, ni perfiles, ni venta de
+  datos a nadie.
+</p>
+
+<h2>Quién responde de tus datos</h2>
+<p>
+  El responsable del tratamiento es <strong>Marc Gracia Barnet</strong>, autor de
+  Mind Void. Para cualquier cuestión sobre esta política o sobre tus datos:
+  <a href="mailto:soportemindvoid@gmail.com">soportemindvoid@gmail.com</a>.
+</p>
+
+<h2>Qué se recoge, y por qué</h2>
+
+<h3>Datos que salen del teléfono</h3>
+<div class="table-wrap">
+<table>
+  <tr><th>Qué</th><th>Para qué</th><th>Base legal</th><th>Dónde vive</th></tr>
+  <tr>
+    <td>Correo electrónico y contraseña</td>
+    <td>crear tu cuenta y dejarte entrar</td>
+    <td>ejecución del contrato (art. 6.1.b RGPD)</td>
+    <td>Firebase Authentication (Google)</td>
+  </tr>
+  <tr>
+    <td>Identificador de usuario</td>
+    <td>atar tus respuestas a tu cuenta y a las de nadie más</td>
+    <td>ejecución del contrato</td>
+    <td>Firebase y Supabase</td>
+  </tr>
+  <tr>
+    <td>Respuesta diaria (número del 1 al 9) y su fecha</td>
+    <td>que cambiar de teléfono no borre meses de respuestas</td>
+    <td>ejecución del contrato</td>
+    <td>Supabase</td>
+  </tr>
+</table>
+</div>
+<p>
+  La contraseña no se guarda: Firebase conserva únicamente una huella
+  criptográfica con la que se puede comprobar si aciertas, pero no reconstruirla.
+  Firebase registra además, por su propio funcionamiento, la fecha de creación de
+  la cuenta, la del último acceso y la dirección IP desde la que entras.
+</p>
+
+<h3>Datos que NO salen del teléfono</h3>
+<p>
+  Se quedan en el almacenamiento privado de la aplicación, al que ningún otro
+  programa del sistema tiene acceso:
+</p>
+<ul>
+  <li>qué aplicaciones usas y cuánto tiempo;</li>
+  <li>tus reglas de bloqueo y qué aplicaciones cubren;</li>
+  <li>el historial de bloqueos y de intentos de abrir algo bloqueado;</li>
+  <li>tu PIN de protección y el estado del Modo Estricto;</li>
+  <li>las categorías que asignas a cada aplicación.</li>
+</ul>
+<p>Nada de esto se envía a ningún servidor, ni al del autor ni a terceros.</p>
+
+<h3>Lo que no hay</h3>
+<p>
+  Mind Void <strong>no</strong> incorpora publicidad, redes de anuncios,
+  identificadores publicitarios, analítica de uso, informes de fallos, mapas de
+  calor, rastreadores ni herramientas de terceros de ningún tipo. No se elabora
+  ningún perfil ni se toman decisiones automatizadas sobre ti.
+</p>
+
+<h2>Permisos del sistema, y para qué sirven</h2>
+<ul>
+  <li>
+    <strong>Servicio de accesibilidad.</strong> Es el corazón de Mind Void: le
+    permite saber qué aplicación tienes delante para poder bloquearla en el
+    momento. Lee únicamente el nombre del paquete de la aplicación en primer
+    plano. <strong>No lee el contenido de tus pantallas, ni lo que escribes, ni
+    tus mensajes, ni tus contraseñas</strong>, y nada de lo que observa sale del
+    teléfono.
+  </li>
+  <li><strong>Acceso a datos de uso.</strong> Para las estadísticas de tiempo de pantalla.</li>
+  <li>
+    <strong>Superposición sobre otras aplicaciones.</strong> Para pintar la
+    pantalla de bloqueo encima de la aplicación que estás intentando abrir.
+  </li>
+  <li>
+    <strong>Notificaciones.</strong> Para el resumen del día y los avisos de
+    límite. Se generan en tu teléfono; no hay notificaciones enviadas desde
+    ningún servidor.
+  </li>
+  <li>
+    <strong>Ignorar optimización de batería.</strong> Para que Android no mate el
+    servicio de bloqueo mientras duerme el teléfono.
+  </li>
+</ul>
+<p>
+  Todos son opcionales salvo la accesibilidad y la superposición, sin los cuales
+  la aplicación no puede bloquear nada.
+</p>
+
+<h2>Quién más los ve</h2>
+<p>Sólo dos proveedores, y únicamente como encargados del tratamiento:</p>
+<ul>
+  <li>
+    <strong>Google Ireland Limited</strong> (Firebase Authentication), para el
+    registro y el acceso.
+    <a href="https://firebase.google.com/support/privacy">Política de privacidad</a>.
+  </li>
+  <li>
+    <strong>Supabase, Inc.</strong> (base de datos), donde vive tu respuesta
+    diaria. El proyecto está alojado en <strong>Fráncfort (Alemania), región
+    eu-central-1</strong>, dentro de la Unión Europea.
+    <a href="https://supabase.com/privacy">Política de privacidad</a>.
+  </li>
+</ul>
+<p>
+  Tus respuestas diarias, por tanto, se almacenan en la UE. Aun así, tanto Google
+  como Supabase son empresas con presencia en Estados Unidos y pueden acceder a
+  los datos desde allí para operar y dar soporte al servicio; cuando eso ocurre,
+  la transferencia se ampara en las cláusulas contractuales tipo aprobadas por la
+  Comisión Europea y en el Marco de Privacidad de Datos UE-EE. UU.
+</p>
+<p>
+  Tus datos no se venden, ni se ceden con fines comerciales, ni se comparten con
+  nadie más, salvo obligación legal.
+</p>
+
+<h2>Cuánto tiempo se conservan</h2>
+<p>
+  Mientras tengas cuenta. Si la borras, tu correo y todas tus respuestas se
+  eliminan de Firebase y de Supabase de forma permanente. Los datos que viven en
+  el teléfono desaparecen al desinstalar la aplicación.
+</p>
+
+<h2>Tus derechos</h2>
+<p>
+  Puedes ejercer en cualquier momento los derechos de acceso, rectificación,
+  supresión, limitación, portabilidad y oposición, y retirar tu consentimiento
+  cuando el tratamiento se base en él. Escribe a
+  <a href="mailto:soportemindvoid@gmail.com">soportemindvoid@gmail.com</a>.
+</p>
+<p>
+  Para borrar tu cuenta y todo lo asociado no hace falta escribir a nadie:
+  <strong>Ajustes → Cuenta → Borrar mi cuenta</strong>, dentro de la propia
+  aplicación. Si ya has desinstalado Mind Void y quieres que se borre igualmente,
+  escribe a la dirección de arriba desde el correo de tu cuenta y se eliminará.
+</p>
+<p>
+  Si crees que tus datos no se están tratando como debieran, puedes reclamar ante
+  la Agencia Española de Protección de Datos
+  (<a href="https://www.aepd.es">www.aepd.es</a>).
+</p>
+
+<h2>Menores</h2>
+<p>
+  Mind Void no está dirigida a menores de 14 años y no recoge datos de ellos a
+  sabiendas. Si detectas que un menor de esa edad ha creado una cuenta, escribe a
+  <a href="mailto:soportemindvoid@gmail.com">soportemindvoid@gmail.com</a> y se
+  eliminará.
+</p>
+
+<h2>Cambios en esta política</h2>
+<p>
+  Si cambia algo relevante, se actualizará la fecha del encabezado y se avisará
+  dentro de la aplicación antes de que el cambio surta efecto.
+</p>
+
+<footer>
+  Mind Void · Marc Gracia Barnet ·
+  <a href="mailto:soportemindvoid@gmail.com">soportemindvoid@gmail.com</a>
+</footer>
+
+</main>
+</body>
+</html>
