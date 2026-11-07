@@ -50,6 +50,13 @@
     padding: 24px;
     margin: 32px 0 0;
   }
+  .lead p { margin: 0 0 14px; }
+  .lead p:last-child { margin: 0; }
+  .correccion {
+    border-left: 2px solid var(--stroke);
+    padding-left: 18px;
+    font-size: 0.9375rem;
+  }
   strong { color: var(--text1); font-weight: 600; }
   a { color: var(--mint); text-decoration: none; }
   a:hover { text-decoration: underline; }
@@ -73,17 +80,42 @@
 
 <header>
   <h1>Política de privacidad</h1>
-  <p class="updated">Mind Void · Última actualización: 19 de agosto de 2026</p>
+  <p class="updated">Mind Void · Última actualización: 6 de noviembre de 2026</p>
 </header>
 
-<p class="lead">
-  Mind Void mide cómo usas el teléfono, pero <strong>esa medición no sale de él</strong>.
-  Ni qué aplicaciones abres, ni cuánto tiempo, ni qué bloqueaste, ni tu PIN. Al
-  servidor sólo viajan dos cosas: <strong>el correo de tu cuenta</strong> y
-  <strong>un número del 1 al 9 por día</strong>, el que eliges al responder cómo te
-  ha ido. Nada más. No hay publicidad, ni analítica, ni perfiles, ni venta de
-  datos a nadie.
-</p>
+<div class="lead">
+  <p>
+    Mind Void mide cómo usas el teléfono, pero <strong>esa medición no sale de
+    él</strong>. Ni qué aplicaciones abres, ni cuánto tiempo, ni qué bloqueaste,
+    ni tu PIN. Al servidor viajan <strong>el correo de tu cuenta</strong>,
+    <strong>un número del 1 al 9 por día</strong> —el que eliges al responder
+    cómo te ha ido—, los <strong>comentarios</strong> que decidas escribir y, si
+    te suscribes a Void Plus, <strong>el estado de tu suscripción</strong>.
+  </p>
+  <p>
+    Y un puñado de <strong>contadores sin nombre</strong> —cuántas reglas tienes,
+    cuántos bloqueos saltaron, a qué horas tienes la aplicación abierta— para saber
+    qué partes de la aplicación se usan y cuáles no. <strong>Vienen encendidos</strong>: se apagan en Ajustes → Ayudar a
+    mejorar Mind Void, y al apagarlos se borra también lo que se hubiera enviado.
+    Están detallados más abajo, enteros.
+  </p>
+  <p class="correccion">
+    <strong>Corrección del 30 de octubre de 2026.</strong> Este resumen, la tabla
+    de abajo y otros tres párrafos seguían diciendo que los contadores venían
+    apagados y que se basaban en tu consentimiento. Dejó de ser verdad el 21 de
+    septiembre, cuando pasaron a venir encendidos (está contado en «La
+    telemetría»), y esas frases no se cambiaron con él. Algo encendido de fábrica
+    no es un consentimiento, así que la base es el interés legítimo, con tu
+    derecho a oponerte apagándolos. Faltaba también RevenueCat, que lleva el cobro
+    de Void Plus desde octubre de 2026.
+  </p>
+  <p>
+    Si usas la <strong>zona de enfoque</strong>, la cámara se enciende mientras
+    colocas la caja sobre la mesa y se apaga en cuanto el móvil entra. Mind Void
+    no guarda la imagen ni la envía a ningún sitio.
+  </p>
+  <p>No hay publicidad, ni perfiles, ni venta de datos a nadie.</p>
+</div>
 
 <h2>Quién responde de tus datos</h2>
 <p>
@@ -118,14 +150,105 @@
     <td>ejecución del contrato</td>
     <td>Supabase</td>
   </tr>
+  <tr>
+    <td>Si tienes <strong>Void Plus</strong>, desde cuándo y hasta cuándo</td>
+    <td>saber qué funciones te corresponden</td>
+    <td>ejecución del contrato</td>
+    <td>Supabase</td>
+  </tr>
+  <tr>
+    <td>
+      Los <strong>comentarios</strong> que envías desde Ajustes → Comentarios,
+      con la versión de la aplicación y de Android
+    </td>
+    <td>leerlos, arreglar lo que cuentes y poder responderte</td>
+    <td>interés legítimo en mejorar la aplicación (art. 6.1.f RGPD)</td>
+    <td>Supabase</td>
+  </tr>
+  <tr>
+    <td>
+      Si te suscribes a <strong>Void Plus</strong>: tu identificador de usuario y
+      los datos de la compra que da Google Play (producto, fechas, renovaciones,
+      cancelaciones y reembolsos)
+    </td>
+    <td>cobrarte, darte acceso a lo que has pagado y atender una reclamación</td>
+    <td>ejecución del contrato</td>
+    <td>Google Play y RevenueCat; una copia del estado, en Supabase</td>
+  </tr>
+  <tr>
+    <td>
+      Contadores de uso sin nombre. <strong>Vienen encendidos</strong>; se apagan
+      en Ajustes → Ayudar a mejorar Mind Void
+    </td>
+    <td>saber qué partes de la aplicación se usan, para decidir qué mejorar</td>
+    <td>interés legítimo en mejorar la aplicación (art. 6.1.f RGPD); puedes
+      oponerte apagándolos, y se borra lo enviado</td>
+    <td>Supabase</td>
+  </tr>
+  <tr>
+    <td>Si eliges un <strong>compañero que aprueba</strong>: su nombre y su correo, y lo
+      que quieres relajar cada vez que le pides el código</td>
+    <td>mandarle la invitación y los códigos</td>
+    <td>ejecución del contrato, para ti; interés legítimo, para el compañero (abajo)</td>
+    <td>Supabase; los correos salen por Gmail (Google)</td>
+  </tr>
 </table>
 </div>
+<p>
+  Con la sesión iniciada, tu identificador de usuario se le da a RevenueCat aunque
+  no compres nada: es como la aplicación sabe si tienes una suscripción, también
+  al cambiar de teléfono. No se le da tu correo ni nada de cómo usas el móvil.
+</p>
 <p>
   La contraseña no se guarda: Firebase conserva únicamente una huella
   criptográfica con la que se puede comprobar si aciertas, pero no reconstruirla.
   Firebase registra además, por su propio funcionamiento, la fecha de creación de
   la cuenta, la del último acceso y la dirección IP desde la que entras.
 </p>
+
+<h3>El compañero que aprueba: datos de otra persona</h3>
+<p>
+  Si eliges un compañero, guardamos su nombre y su correo para mandarle dos cosas:
+  la invitación, con un código que te pasa si acepta, y cada vez que quieras relajar
+  un bloqueo, un correo con <strong>qué</strong> quieres hacer y un código para hacerlo.
+  El correo lleva tu nombre y tu dirección, para que sepa quién se lo pide. No le
+  mandamos nada más, ni se lo damos a nadie.
+</p>
+<p>
+  El compañero no ha creado ninguna cuenta con nosotros: sus datos los tratamos por
+  interés legítimo (art. 6.1.f RGPD), el de mandarle lo que tú le pides que apruebe,
+  y la invitación le dice qué son y cómo se borran. Se borran en cuanto lo quitas o
+  borras tu cuenta, y él puede pedirlo escribiendo a la dirección de abajo. Los
+  códigos no se guardan: se guarda una huella con la que se comprueban, y caducan a
+  los treinta minutos (siete días, el de la invitación).
+</p>
+
+<h3>Los comentarios: van con tu nombre, y por eso</h3>
+<p>
+  Es lo único de Mind Void donde escribes tú, con tus palabras, y <strong>va
+  atado a tu cuenta a propósito</strong>. Un comentario sin remitente no se puede
+  contestar, y poder contestarte es la razón de que exista la pantalla. Se te dice
+  ahí mismo, antes de que escribas nada.
+</p>
+<p>
+  No lo confundas con los contadores de uso de más abajo: aquéllos son anónimos
+  porque <strong>miden</strong>; esto no mide, habla.
+</p>
+<p>
+  Se envía lo que escribes, tu identificador de usuario, y la versión de Mind Void
+  y de Android. Esas dos últimas se mandan para no tener que preguntártelas cuando
+  cuentas que algo falla. Nada más: ni qué aplicaciones usas, ni desde dónde
+  escribes, ni qué pantalla tenías abierta.
+</p>
+<p>
+  Sólo lo lee quien hace la aplicación. <strong>Tú no puedes releerlos desde la
+  aplicación</strong>, y eso es a propósito: junto a cada comentario se guarda una
+  nota de trabajo —«esto es el fallo del widget», «ya contestado»— y esa nota no
+  es tuya ni tiene por qué estar a tu alcance. La aplicación envía y no vuelve a
+  leer esa tabla; lo que ves en la pantalla después sale de una copia guardada en
+  tu propio teléfono.
+</p>
+<p>Si borras tu cuenta, se van con ella.</p>
 
 <h3>Datos que NO salen del teléfono</h3>
 <p>
@@ -134,22 +257,145 @@
 </p>
 <ul>
   <li>qué aplicaciones usas y cuánto tiempo;</li>
-  <li>tus reglas de bloqueo y qué aplicaciones cubren;</li>
+  <li>tus reglas de bloqueo, qué aplicaciones cubren y qué webs y palabras frenan;</li>
   <li>el historial de bloqueos y de intentos de abrir algo bloqueado;</li>
   <li>tu PIN de protección y el estado del Modo Estricto;</li>
   <li>
+    la imagen de la cámara mientras colocas una zona de enfoque, y las lecturas
+    de los sensores de movimiento mientras dura;
+  </li>
+  <li>
     las categorías que asignas a cada aplicación, y el estado que Mind Void
-    calcula para cada día a partir de ellas.
+    calcula para cada día a partir de ellas;
+  </li>
+  <li>
+    tus objetivos —lo que escribes sobre quién quieres ser, a qué hora y qué
+    haces en su lugar— y si cada día los cumpliste.
   </li>
 </ul>
 <p>Nada de esto se envía a ningún servidor, ni al del autor ni a terceros.</p>
 
+<h3>La telemetría: qué es y qué no</h3>
+<p>
+  Está en <strong>Ajustes → Ayudar a mejorar Mind Void</strong> y <strong>viene
+  encendida</strong>. Se apaga ahí en un toque, y al apagarla se borra también lo
+  que ya se hubiera enviado.
+</p>
+<p class="correccion">
+  <strong>Cambio del 21 de septiembre de 2026.</strong> Hasta esta fecha venía
+  <strong>apagada</strong> y además sólo se enviaba con la sesión iniciada. El
+  resultado fue que no llegó <strong>ni una sola fila</strong> en todo ese tiempo,
+  y con ello la pregunta que esta medición existe para responder —cuánta gente
+  instala Mind Void y la deja sin llegar a usarla— no se podía contestar de
+  ninguna manera: quien abre la aplicación una vez y no vuelve no enciende
+  interruptores ni se registra. Desde hoy está encendida de salida, se envía con o
+  sin cuenta, y se avisa de ello en la primera pantalla de la aplicación además de
+  aquí. Lo que se recoge <strong>no ha cambiado</strong>: exactamente la misma
+  lista de abajo, sin nombre y sin cuenta detrás.
+</p>
+<p>
+  Se sube <strong>una fila de números por día</strong>: la del día anterior ya
+  cerrado y, desde el 21 de septiembre de 2026, también la del día en curso cada
+  vez que abres la aplicación —para que una instalación que se usa un solo día no
+  sea invisible—. La del día en curso se sustituye por la definitiva cuando ese
+  día termina. Esto es todo lo que lleva, y la lista es exhaustiva:
+</p>
+<ul>
+  <li>veces que abriste la aplicación;</li>
+  <li>cuántas reglas de bloqueo tienes, y cuántas creaste o borraste ese día;</li>
+  <li>
+    veces que apareció una pantalla de bloqueo, y cuántas la saltaste con la
+    pausa consciente;
+  </li>
+  <li>sesiones de foco empezadas y terminadas;</li>
+  <li>
+    si respondiste al registro del día, si el Modo Estricto estaba puesto y si
+    terminaste el tutorial —sí o no, nunca el contenido—;
+  </li>
+  <li>qué permisos tienes concedidos, sí o no cada uno;</li>
+  <li>la versión de Mind Void y la versión de Android.</li>
+</ul>
+<p>
+  Y, desde el 6 de noviembre de 2026, un <strong>latido</strong>: mientras tienes
+  la aplicación abierta, como mucho <strong>una vez por hora</strong>, el teléfono
+  avisa de que lo está. Lleva el mismo identificador aleatorio y la versión de Mind
+  Void, y nada más. <strong>El teléfono no manda ninguna hora</strong>: es el
+  servidor el que apunta la hora en punto en que lo recibe —«las 18:00», no «las
+  18:07»—, y con eso se cuenta cuántos móviles tienen la aplicación abierta en la
+  última hora. Esa tabla tiene tres columnas —el identificador, la hora en punto y
+  la versión— y <strong>se vacía sola a los ocho días</strong>.
+</p>
+<p>
+  <strong>Lo que no lleva, y no puede llevar por cómo está construida:</strong>
+  ni un solo nombre de aplicación, ni tiempos de pantalla, ni tu correo, ni tu
+  identificador de usuario, ni tu PIN, ni el número del 1 al 9 que respondes cada
+  día. La tabla del servidor tiene una columna por dato de los
+  de arriba y ninguna más; no hay ningún campo libre donde quepa nada que no esté
+  en esa lista, y ampliarla obligaría a cambiar el código, la base de datos y
+  este documento a la vez.
+</p>
+<p class="correccion">
+  <strong>Corrección del 6 de noviembre de 2026.</strong> Esta lista decía también
+  «ni horas del día», y desde ese día no es verdad del todo: el latido deja en el
+  servidor, durante ocho días, las horas en punto en que tenías la aplicación
+  abierta. La fila diaria sigue sin llevar ninguna hora, y el teléfono sigue sin
+  mandarla; la apunta el servidor al recibir el latido. Se cambió porque el autor
+  quería saber cuántos móviles tienen la aplicación abierta en la última hora y en
+  las últimas 24, y con una fila por día no había forma de contarlo.
+</p>
+<p>
+  En vez de a tu cuenta, esa fila va atada a un <strong>identificador
+  aleatorio</strong> que tu teléfono se inventa la primera vez que mide. Al apagar
+  el interruptor, el teléfono lo destruye y <strong>borra del servidor todo lo que
+  había enviado</strong>; si vuelves a encenderlo se genera otro distinto, de
+  modo que dos periodos no quedan cosidos entre sí. En esa tabla no existe
+  ninguna columna con la que llegar hasta una persona, y quien esto escribe
+  tampoco puede.
+</p>
+<p>
+  Los números se miran <strong>en agregado y jamás fila a fila</strong>: sirven
+  para responder «cuánta gente llega a conceder la accesibilidad» o «cuántos
+  bloqueos se saltan», no para mirar qué hizo nadie en particular.
+</p>
+<p>
+  Con la misma franqueza que el resto de este documento: esto es
+  <strong>seudonimización, no anonimato perfecto</strong>. La petición sale del
+  teléfono con la clave pública de la aplicación, sin tu cuenta detrás, y Supabase
+  apunta las direcciones IP en los registros técnicos de su plataforma, como hace
+  con todo lo demás. En la fila no queda con qué cruzar; quien tuviera acceso a
+  esos registros podría estrechar el círculo. Por eso el interruptor sigue ahí,
+  apagarlo borra lo enviado, y el identificador no sobrevive a ese apagado.
+</p>
+<p>
+  Aquí ponía que la petición salía <strong>autenticada con la sesión de tu
+  cuenta</strong> y que ésa era la razón de que la medición fuera opcional y
+  viniera apagada. Ya no es así, por lo explicado arriba: exigir cuenta dejaba
+  fuera precisamente lo que se quería medir. La contrapartida honesta es que ahora
+  cualquiera con la clave que viaja dentro de la aplicación puede escribir en esa
+  tabla; el servidor comprueba que cada valor esté dentro de su rango, y esa tabla
+  no se puede leer desde fuera ni con la clave ni con cuenta.
+</p>
+
 <h3>Lo que no hay</h3>
 <p>
   Mind Void <strong>no</strong> incorpora publicidad, redes de anuncios,
-  identificadores publicitarios, analítica de uso, informes de fallos, mapas de
-  calor, rastreadores ni herramientas de terceros de ningún tipo. No se elabora
-  ningún perfil ni se toman decisiones automatizadas sobre ti.
+  identificadores publicitarios, informes de fallos, mapas de calor,
+  rastreadores ni herramientas de terceros de ningún tipo. No se elabora ningún
+  perfil ni se toman decisiones automatizadas sobre ti.
+</p>
+<p class="correccion">
+  <strong>Corrección del 19 de agosto de 2026.</strong> Hasta esta fecha esta
+  lista incluía también «analítica de uso», y con la telemetría de la sección
+  anterior deja de ser cierta tal cual estaba escrita. Se corrige diciéndolo, no
+  borrándolo. Lo que sí sigue en pie: no la recoge ninguna herramienta de
+  terceros —no hay Google Analytics, ni Firebase Analytics, ni Crashlytics—, no
+  sale de los mismos proveedores de siempre y no construye ningún perfil de nadie.
+</p>
+<p class="correccion">
+  <strong>Y otra del 30 de octubre de 2026.</strong> Esta nota decía además que la
+  telemetría venía apagada, que dejó de ser cierto el 21 de septiembre, y que no
+  había «SDK de nadie dentro de la aplicación». Desde octubre está el de
+  RevenueCat, para el cobro; no mide cómo usas la aplicación.
 </p>
 
 <h2>Permisos del sistema, y para qué sirven</h2>
@@ -157,10 +403,28 @@
   <li>
     <strong>Servicio de accesibilidad.</strong> Es el corazón de Mind Void: le
     permite saber qué aplicación tienes delante para poder bloquearla en el
-    momento. Lee únicamente el nombre del paquete de la aplicación en primer
-    plano. <strong>No lee el contenido de tus pantallas, ni lo que escribes, ni
-    tus mensajes, ni tus contraseñas</strong>, y nada de lo que observa sale del
-    teléfono.
+    momento. Lee el nombre del paquete de la aplicación en primer plano y,
+    <strong>sólo mientras tienes delante la pantalla de inicio</strong>, el texto
+    de lo que tocas en ella: el nombre de un icono o, si tocas un widget, su
+    texto. Lo compara con los nombres de tus aplicaciones para que la pausa salga
+    en el mismo instante en que tocas una bloqueada, y lo descarta en el acto: no
+    se guarda ni sale del móvil. Fuera de la pantalla de inicio, y con las
+    notificaciones desplegadas, no recibe nada de lo que tocas. <strong>No lee el
+    contenido de tus aplicaciones, ni lo que escribes, ni tus mensajes, ni tus
+    contraseñas</strong>, y nada de lo que observa sale del teléfono.
+  </li>
+  <li>
+    <strong>«Mind Void · Webs», un segundo servicio de accesibilidad.</strong> Opcional y
+    apagado de fábrica; sólo hace falta para frenar webs y palabras. Va aparte del
+    primero para que éste siga sin leer nada de la pantalla. Recibe eventos <strong>sólo
+    de los navegadores</strong> —Chrome, Samsung Internet, Firefox, Edge, Brave, Opera,
+    DuckDuckGo, Vivaldi y Kiwi— y de ellos <strong>lee sólo la barra de direcciones</strong>,
+    para compararla con las webs y palabras de tus bloqueos. <strong>No lee el contenido de
+    las páginas ni lo que escribes en ellas</strong>, ni nada de ninguna otra aplicación. La
+    dirección no se guarda ni sale del teléfono: se compara y se olvida. Lo único que
+    queda es lo mismo que con las aplicaciones: el registro de cada vez que te frena,
+    con la web en lugar del nombre de la aplicación, en el teléfono. Antes de
+    activarlo, la aplicación te enseña esto mismo y te pide que lo aceptes.
   </li>
   <li><strong>Acceso a datos de uso.</strong> Para las estadísticas de tiempo de pantalla.</li>
   <li>
@@ -169,7 +433,8 @@
   </li>
   <li>
     <strong>Notificaciones.</strong> Para el recordatorio periódico, los avisos de
-    límite, el informe semanal y el recordatorio del registro del día. Se generan
+    límite, los informes semanal y mensual, el recordatorio del registro del día, el aviso de cada
+    objetivo y el que te dice que el bloqueo se ha detenido. Se generan
     en tu teléfono; no hay notificaciones enviadas desde ningún servidor.
   </li>
   <li>
@@ -191,30 +456,66 @@
     <strong>Ignorar optimización de batería.</strong> Para que Android no mate el
     servicio de bloqueo mientras duerme el teléfono.
   </li>
+  <li>
+    <strong>Cámara.</strong> Opcional, sólo para la zona de enfoque. Se enciende
+    mientras colocas la caja sobre la mesa y metes el móvil dentro, y se apaga en
+    el instante en que entra. <strong>Mind Void no lee la imagen</strong>: la
+    pinta en la pantalla tal cual llega, sin guardarla, sin grabarla y sin
+    enviarla a ningún sitio. Para reconocer la mesa usa los Servicios de Google
+    Play para RA (ARCore), que proporciona Google y se rigen por la
+    <a href="https://policies.google.com/privacy">Política de Privacidad de Google</a>.
+    Mind Void no usa ninguna de sus funciones en la nube.
+  </li>
+  <li>
+    <strong>Sensores de movimiento.</strong> Mientras dura una zona de enfoque,
+    el acelerómetro y los sensores de gesto del teléfono —levantar, inclinar,
+    moverse— notan si coges el móvil, para parar la cuenta atrás. Android no pide
+    permiso para esto. Las lecturas se usan en el momento y se descartan: no se
+    guardan ni salen del teléfono.
+  </li>
+  <li>
+    <strong>Servicio en primer plano.</strong> Es la notificación fija que ves
+    mientras dura una zona de enfoque. Android obliga a enseñarla para que un
+    servicio siga funcionando con la pantalla apagada, y ese servicio es el que
+    nota si coges el móvil.
+  </li>
 </ul>
 <p>
   Todos son opcionales salvo la accesibilidad y la superposición, sin los cuales
-  la aplicación no puede bloquear nada.
+  la aplicación no puede bloquear nada, y el acceso a datos de uso, sin el cual
+  no hay límites de tiempo ni estadísticas.
 </p>
 
 <h2>Quién más los ve</h2>
-<p>Sólo dos proveedores, y únicamente como encargados del tratamiento:</p>
+<p>Tres proveedores, y únicamente como encargados del tratamiento:</p>
 <ul>
   <li>
     <strong>Google Ireland Limited</strong> (Firebase Authentication), para el
-    registro y el acceso.
+    registro y el acceso; y Gmail, desde donde salen los correos al compañero que
+    aprueba.
     <a href="https://firebase.google.com/support/privacy">Política de privacidad</a>.
   </li>
   <li>
-    <strong>Supabase, Inc.</strong> (base de datos), donde vive tu respuesta
-    diaria. El proyecto está alojado en <strong>Fráncfort (Alemania), región
+    <strong>Supabase, Inc.</strong> (base de datos), donde viven tu respuesta
+    diaria, tus comentarios y los contadores de uso. El proyecto está alojado en <strong>Fráncfort (Alemania), región
     eu-central-1</strong>, dentro de la Unión Europea.
     <a href="https://supabase.com/privacy">Política de privacidad</a>.
   </li>
+  <li>
+    <strong>RevenueCat, Inc.</strong> (cobro de Void Plus), que recibe tu
+    identificador de usuario al iniciar sesión y, si compras, los datos de la
+    compra que le da Google Play.
+    <a href="https://www.revenuecat.com/privacy">Política de privacidad</a>.
+  </li>
 </ul>
 <p>
-  Tus respuestas diarias, por tanto, se almacenan en la UE. Aun así, tanto Google
-  como Supabase son empresas con presencia en Estados Unidos y pueden acceder a
+  Los pagos los cobra <strong>Google Play</strong>, que trata tus datos de pago
+  por su cuenta, como responsable, con su propia política. Mind Void no ve tu
+  tarjeta ni tu dirección.
+</p>
+<p>
+  Tus respuestas diarias, por tanto, se almacenan en la UE. Aun así, Google,
+  Supabase y RevenueCat son empresas con presencia en Estados Unidos y pueden acceder a
   los datos desde allí para operar y dar soporte al servicio; cuando eso ocurre,
   la transferencia se ampara en las cláusulas contractuales tipo aprobadas por la
   Comisión Europea y en el Marco de Privacidad de Datos UE-EE. UU.
@@ -226,9 +527,25 @@
 
 <h2>Cuánto tiempo se conservan</h2>
 <p>
-  Mientras tengas cuenta. Si la borras, tu correo y todas tus respuestas se
-  eliminan de Firebase y de Supabase de forma permanente. Los datos que viven en
-  el teléfono desaparecen al desinstalar la aplicación.
+  Mientras tengas cuenta. Si la borras, tu correo, todas tus respuestas, tus
+  comentarios, tu acceso a Void Plus y los datos de tu compañero se eliminan de
+  Firebase y de Supabase de forma permanente. Los de tu compañero se borran también
+  en cuanto lo quitas.
+  Los datos que viven en el teléfono desaparecen al desinstalar la aplicación.
+</p>
+<p>
+  Al borrarla, también se borra tu cliente en RevenueCat. Los cobros se quedan en
+  nuestra base sólo como cifra de ingresos, sin tu identificador ni el número de
+  pedido. Google Play conserva los suyos según su política.
+</p>
+<p>
+  Los contadores de uso se borran del servidor en
+  cuanto apagas el interruptor, y también al borrar la cuenta. Mientras siga
+  encendido se conservan sin plazo, y aquí toca ser exacto sobre el motivo: no
+  cuelgan de nadie, así que no hay a quién devolvérselos ni de quién limpiarlos.
+  El único mando que los borra lo tienes tú, en el propio interruptor. Los
+  latidos por hora son la excepción: se borran solos a los ocho días, además de
+  con el interruptor.
 </p>
 
 <h2>Tus derechos</h2>
@@ -243,6 +560,11 @@
   <strong>Ajustes → Cuenta → Borrar mi cuenta</strong>, dentro de la propia
   aplicación. Si ya has desinstalado Mind Void y quieres que se borre igualmente,
   escribe a la dirección de arriba desde el correo de tu cuenta y se eliminará.
+</p>
+<p>
+  Para oponerte a los contadores de uso no hace falta escribir a nadie:
+  <strong>Ajustes → Ayudar a mejorar Mind Void</strong>. Apagarlo borra del
+  servidor lo que se hubiera enviado hasta entonces.
 </p>
 <p>
   Si crees que tus datos no se están tratando como debieran, puedes reclamar ante
